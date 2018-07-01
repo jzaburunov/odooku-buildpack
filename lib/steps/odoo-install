@@ -16,6 +16,8 @@ fi
 # Create final stack
 STACK="{\"odoo\":{\"repo\": \"$ODOO_REPO\", \"branch\": \"$ODOO_BRANCH\", \"commit\": \"$ODOO_COMMIT\"}}"
 
+puts-line "Odoo repo to fectch: $ODOO_ARCHIVE"
+
 # See if anything has changed
 if [ ! -f ".heroku/odoo/stack.json" ] || [ `echo $STACK | $JQ -cS .` != `$JQ -cS . .heroku/odoo/stack.json` ]; then
 
